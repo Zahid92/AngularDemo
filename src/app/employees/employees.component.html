@@ -1,0 +1,23 @@
+<h2>
+    Total Employee count : {{employeeCount}}
+</h2>
+
+<table>
+    <thead>
+        <th>EmployeeID</th>
+        <th>Name</th>
+        <th>Age</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.EmployeeID}}</td>
+            <td>{{employee.Name}}</td>
+            <td>{{employee.Age}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<input type="text" [(ngModel)]="username"><br>
+<input type="number" [(ngModel)]="age">
+
+<button (click)="AddEmployee()">Add Employee</button>
