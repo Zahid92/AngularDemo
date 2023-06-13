@@ -3,10 +3,15 @@ export class Employee {
     Name!: string
     Age!: number
     EmployeeID!: number
-    constructor(name: string, age: number) {
+    Salary: number = 0
+    img: string = "..\\assets\\employeeIcon.jpg"
+    
+    constructor(name: string, age: number, salary: number) {
         this.Name = name
         this.Age = age
         Employee.ID += 1
         this.EmployeeID = Employee.ID
+        this.Salary = salary
     }
+
 }

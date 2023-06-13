@@ -2,17 +2,24 @@
     Total Employee count : {{employeeCount}}
 </h2>
 
-<table>
+<table class="table">
     <thead>
         <th>EmployeeID</th>
         <th>Name</th>
+        <th>Salary</th>
         <th>Age</th>
+        <th>Icon</th>
+        <th>Updater</th>
     </thead>
     <tbody>
         <tr *ngFor="let employee of employees">
             <td>{{employee.EmployeeID}}</td>
             <td>{{employee.Name}}</td>
+            <td>{{employee.Salary}}</td>
             <td>{{employee.Age}}</td>
+            <td><img class="imgp" [src]="employee.img"></td>
+            <td><app-salaryupdater [salval]="employee.Salary" (updateSal)="UpdateSalary($event, employee.EmployeeID)"></app-salaryupdater></td>
+            <td><button *ngIf="isAdmin" class="btn btn-danger" (click)="Delete(employee.EmployeeID)">Delete</button></td>
         </tr>
     </tbody>
 </table>

@@ -6,19 +6,29 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { FormsModule } from '@angular/forms';
+import { EmpDataService } from './emp-data.service';
+import { FemaleEmployeeDataService } from './female-employee-data.service';
+import { NavbarComponent } from './navbar/navbar.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SalaryupdaterComponent } from './salaryupdater/salaryupdater.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    EmployeesComponent
+    EmployeesComponent,
+    NavbarComponent,
+    PageNotFoundComponent,
+    SalaryupdaterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{provide: EmpDataService, useClass: FemaleEmployeeDataService}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
