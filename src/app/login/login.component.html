@@ -1,5 +1,48 @@
 <p>login works!</p>
-<input typt="text" [(ngModel)]="username">
+<input class="login_input int" name="uname"  typt="text" [(ngModel)]="username">
+<div>
+
+</div>
 <input typt="password" [(ngModel)]="password">
 <button (click)="Authenticate()">Login</button>
 <h3>{{username}}</h3>
+
+<form #login=ngForm>
+
+    <!-- <input class="login_input int" type="text" name="uname"  placeholder="User Name"  [value]="username"><br> -->
+
+        <input class="login_input int" type="text" name="uname" #uname="ngModel" required minlength="5" placeholder="User Name" [(ngModel)]="username">
+
+           <br>
+
+<!-- validation -->
+
+        <div *ngIf="uname.invalid && uname.touched">
+
+            <div *ngIf="uname.errors?.['required']" class="text-danger">UserName is required</div>
+
+            <div *ngIf="uname.errors?.['minlength']" class="text-danger">UserName has to be min 5 character</div>
+
+        </div>  
+
+        <input class="login_input" type="password" name="pwd" placeholder="Paasword" #pwd="ngModel" required
+
+        minlength="5" [(ngModel)]="password"><br>
+
+<!-- validation -->
+
+    <div *ngIf="pwd.invalid && pwd.touched">
+
+        <div *ngIf=" pwd.errors?.['required']" class="text-danger">password is required</div>
+
+        <div *ngIf=" pwd.errors?.['minlength']" class="text-danger">password has to be min 5 character</div>
+
+    </div>
+
+    <button class="form-group login_btn btn btn-primary" type="submit" [disabled]="login.invalid"
+
+        (click)="Authenticate()">Login</button><br>
+
+     variable value in class: {{username}}
+
+</form>

@@ -1,0 +1,44 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "Name": "Zahid",
+      "Age": 23,
+      "Salary": 300000,
+      "img": "None"
+    },
+    {
+      "Salary": 0,
+      "img": "..\\assets\\employeeIcon.jpg",
+      "Name": "nina",
+      "Age": 300,
+      "EmployeeID": 8,
+      "id": 3
+    },
+    {
+      "Salary": 0,
+      "img": "..\\assets\\employeeIcon.jpg",
+      "Name": "subodh",
+      "Age": 54,
+      "EmployeeID": 8,
+      "id": 4
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

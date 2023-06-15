@@ -1,0 +1,13 @@
+<p>viewchild works!</p>
+<p #highlight>Important msg</p>
+<p #highlight>Important msg</p>
+<div>
+    <button (click)="inc()">increment</button>
+    <button (click)="dec()">Decrement</button>
+</div>
+<p> {{child?.counter}}</p>
+
+
+
+
+<app-counter #child></app-counter>
