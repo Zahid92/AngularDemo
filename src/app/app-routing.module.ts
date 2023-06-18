@@ -5,6 +5,7 @@ import { EmployeesComponent } from './employees/employees.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -12,7 +13,9 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'registration', component: RegistrationComponent},
   {path:'empList', component: EmployeesComponent},
-  {path:'**', component: PageNotFoundComponent}
+  {path:'product', loadChildren:()=>import('./product/product.module').then(mod=>mod.ProductModule)},
+  {path:'users', component: UserComponent},
+  {path:'**', component: PageNotFoundComponent},
 ];
 
 @NgModule({

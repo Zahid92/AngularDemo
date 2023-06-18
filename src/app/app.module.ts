@@ -17,6 +17,9 @@ import { ViewchildComponent } from './viewchild/viewchild.component';
 import { CounterComponent } from './counter/counter.component';
 import { RegistrationComponent } from './registration/registration.component';
 import {HttpClientModule} from '@angular/common/http';
+import { UserComponent } from './user/user.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { ProductModule } from './product/product.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import {HttpClientModule} from '@angular/common/http';
     PipesComponent,
     ViewchildComponent,
     CounterComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    UserComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +43,7 @@ import {HttpClientModule} from '@angular/common/http';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule
+   // ProductModule
   ],
   providers: [{provide: EmpDataService, useClass: FemaleEmployeeDataService}],
   bootstrap: [AppComponent]
